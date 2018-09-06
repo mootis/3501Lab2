@@ -40,6 +40,11 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        // Create array - Generate 10,000 random TestIntegers in range 1-1,000,000 using Math.random
+        // Clone array using .clone
+        // Sort the array using Tim Sort
+        // Sort the array using Quicksort
+
+        // TODO Print counter end from TestInteger.java
     }
 }
