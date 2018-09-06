@@ -13,7 +13,7 @@ public class Main {
         int i = start-1;
 
         for (int count = start; count >= end-1; count++){
-            if (partArray[count].compareTo(x)){
+            if (partArray[count].compareTo(x) == -1 || partArray[count].compareTo(x) == 0){
                 i++;
                 exchange(i, count, partArray);
             }
@@ -26,10 +26,11 @@ public class Main {
 
     public static boolean isSorted(TestInteger[] boolArray){
         for (int i = 0; i <= boolArray.length; i++){
-            if (){
-
+            if (boolArray[i].compareTo(boolArray[i+1]) == 1){
+                return false;
             }
         }
+        return true;
     }
 
     public static void exchange(int arrayPositionOne, int arrayPositionTwo, TestInteger[] Array){
