@@ -1,6 +1,6 @@
-Authors: David Chong, Ethan Hamer, Abe Monjor
-CSci 3501 Lab 2
-Due Friday, September 14th by midnight
+Authors: David Chong, Ethan Hamer, Abe Monjor<br/>
+CSci 3501 Lab 2<br/>
+Due Friday, September 14th by midnight<br/>
 30 points
 Work in pairs
 
@@ -9,6 +9,24 @@ Results of sorting - five trials
 Tim sort {120401, 120436, 120345, 120393, 120467}
 
 Quick sort {162620, 161465, 159754, 155558, 151760}
+
+Results of sorting - increasing order
+-
+Tim sort {9999}
+
+Quick sort {49995000}
+
+Results of sorting - five trials with 10 sorted sequences of 1,000 elements each
+-
+Tim sort {10337, 10259, 10257, 10293, 10286}
+
+Quick sort {15005000, 20003000, 25001000, 16011000, 27001000}
+
+Results of sorting - five trials with 100 sorted sequences of 100 elements each
+-
+Tim sort {14793, 14384, 14254, 14479, 14505}
+
+Quick sort {3175770, 4352700, 4443373, 3812800, 2360613}
 
 - All lab submissions should be done by canvas. Please be sure to include
 your group members.
@@ -98,5 +116,5 @@ in increasing order may generate a stack overflow because there are 10,000
 calls (that’s the worse case of quicksort when there is one call per ele-
 ment) which is more than the default stack size. You need to increase the
 stack size in the JVM (Java Virtual Machine) which you can do by set-
-ting a JVM flag in Eclipse: 
-- http://stackoverflow.com/questions/15313393/how-to-increase-heap-size-in-eclipse3
+ting a JVM flag in Eclipse: <br/>
+http://stackoverflow.com/questions/15313393/how-to-increase-heap-size-in-eclipse3
