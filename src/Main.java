@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Main {
 
     public static void quicksort(TestInteger[] quickArray, int start, int end){
@@ -41,10 +43,22 @@ public class Main {
 
     public static void main(String[] args) {
         // Create array - Generate 10,000 random TestIntegers in range 1-1,000,000 using Math.random
-        // Clone array using .clone
-        // Sort the array using Tim Sort
-        // Sort the array using Quicksort
+        TestInteger[] timArray = new TestInteger[10000];
 
-        // TODO Print counter end from TestInteger.java
+        // WIP Null pointer
+        for (TestInteger testInteger : timArray) {
+            testInteger.value = (int)(Math.random() * 1000000);
+        }
+        // Clone array using .clone
+        TestInteger[] quickArray = timArray.clone();
+        // Sort the array using Tim Sort
+        Arrays.sort(timArray);
+        System.out.println("TimSort counter output: " + TestInteger.counter);
+        System.out.println("Is the array sorted?" + Boolean.toString(isSorted(timArray)));
+        TestInteger.counter = 0;
+        // Sort the array using Quicksort
+        quicksort(quickArray, 0, quickArray.length);
+        System.out.println("Is the array sorted?" + Boolean.toString(isSorted(quickArray)));
+        System.out.println("QuickSort counter output: " + TestInteger.counter);
     }
 }
