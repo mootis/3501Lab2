@@ -12,23 +12,23 @@ public class Main {
 
     public static int partition(TestInteger[] partArray, int start, int end){
         TestInteger x = partArray[end];
-        int i = start-1;
+        int i = start - 1;
 
-        for (int count = start; count >= end-1; count++){
-            if (partArray[count].compareTo(x) == -1 || partArray[count].compareTo(x) == 0){
+        for (int count = start; count <= end - 1; count++){
+            if (partArray[count].compareTo(x) <= 0){
                 i++;
                 exchange(i, count, partArray);
             }
         }
 
-        exchange(i++, end, partArray);
+        exchange(i+1, end, partArray);
 
-        return i++;
+        return i+1;
     }
 
     public static boolean isSorted(TestInteger[] boolArray){
-        for (int i = 0; i <= boolArray.length; i++){
-            if (boolArray[i].compareTo(boolArray[i+1]) == 1){
+        for (int i = 1; i < boolArray.length; i++){
+            if (boolArray[i-1].compareTo(boolArray[i]) == 1){
                 return false;
             }
         }
@@ -46,8 +46,8 @@ public class Main {
         TestInteger[] timArray = new TestInteger[10000];
 
         // Populate array
-        for (TestInteger testInteger : timArray) {
-            testInteger = new TestInteger((int)(Math.random() * 1000000));
+        for (int i = 0; i < 10000; i++){
+            timArray[i] = new TestInteger((int)(Math.random()*100000));
         }
 
         // Clone array using .clone
@@ -56,12 +56,12 @@ public class Main {
         // Sort the array using Tim Sort
         Arrays.sort(timArray);
         System.out.println("TimSort counter output: " + TestInteger.counter);
-        System.out.println("Is the array sorted?" + Boolean.toString(isSorted(timArray)));
+        System.out.println("Is the array sorted? " + Boolean.toString(isSorted(timArray)));
         TestInteger.counter = 0;
 
         // Sort the array using Quicksort
-        quicksort(quickArray, 0, quickArray.length);
-        System.out.println("Is the array sorted?" + Boolean.toString(isSorted(quickArray)));
+        quicksort(quickArray, 0, quickArray.length - 1);
         System.out.println("QuickSort counter output: " + TestInteger.counter);
+        System.out.println("Is the array sorted? " + Boolean.toString(isSorted(quickArray)));
     }
 }
