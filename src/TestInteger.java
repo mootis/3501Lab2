@@ -2,7 +2,9 @@ public class TestInteger implements Comparable<TestInteger>{
     public int value;
     static long counter;
 
-    // TestInteger(){}
+    TestInteger(int givenValue){
+        value = givenValue;
+    }
 
     public int compareTo(TestInteger comparingTo) {
         counter++;
