@@ -1,6 +1,25 @@
 import java.util.Arrays;
+import java.util.Random;
 
 public class Main {
+
+    // Randomized-Quicksort method based on psudocode from book
+    public static void randQuicksort(TestInteger[] rQuickArray, int start, int end){
+        if (start < end){
+            int q = randPartition(rQuickArray, start, end);
+            randQuicksort(rQuickArray, start, q-1);
+            randQuicksort(rQuickArray, q+1, end);
+        }
+    }
+
+    // Randomized-Partition method based on psudocode from book
+    // Partitions array into smaller parts for randomized-quicksort
+    public static int randPartition(TestInteger[] rPartArray, int start, int end){
+        Random i = new Random();
+        int result = i.nextInt(end-start) + start;
+        exchange(result, end, rPartArray);
+        return partition(rPartArray, start, end);
+    }
 
     // Quicksort method based on psudocode from book
     public static void quicksort(TestInteger[] quickArray, int start, int end){
@@ -55,7 +74,8 @@ public class Main {
 
         // Populate array - Change i to modify number of sorted sequences
         // Make sure only one section is active at a time!
-        for (int i = 0; i < 100; i++){
+
+        for (int i = 0; i < 10000; i++){
             // Random sequence - default
             timArray[i] = new TestInteger((int)(Math.random()*100000));
 
@@ -85,6 +105,13 @@ public class Main {
         // Clone array using .clone
         TestInteger[] quickArray = timArray.clone();
 
+        // Sort the array using Random-Quicksort
+        randQuicksort(quickArray, 0, quickArray.length-1);
+        System.out.println("Random-Quicksort counter output: " + TestInteger.counter);
+        System.out.println("Is the array sorted? " + Boolean.toString(isSorted(quickArray)));
+        TestInteger.counter = 0;
+
+        /*
         // Sort the array using Tim Sort
         Arrays.sort(timArray);
         System.out.println("TimSort counter output: " + TestInteger.counter);
@@ -95,5 +122,6 @@ public class Main {
         quicksort(quickArray, 0, quickArray.length - 1);
         System.out.println("QuickSort counter output: " + TestInteger.counter);
         System.out.println("Is the array sorted? " + Boolean.toString(isSorted(quickArray)));
+        */
     }
 }
