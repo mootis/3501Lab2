@@ -4,9 +4,9 @@ public class Testing {
 
     public static void main(String[] args) {
         // This is where all of our tests are going to live
-	
+
 	// First we'll set up some results arrays just to make them easier to read at the end
-	
+
 	long[] timsortRandomArrayResults = new long[5];
 	long[] timsortPresortedArrayResults = new long[5];
 	long[] timsortTenRunsArrayResults = new long[5];
@@ -36,24 +36,24 @@ public class Testing {
 
 	// We'll do most of the rest of the code in one for loop so that it's easier to get all five results for each sorting algorithm
 	// We'll return all the results at the end in a easier to read format
-	
+
 	for(int i = 0; i < 5; i++){
         // These are all the reference arrays for the four different scenarios
 
         // This block generates a completely random array of TestIntegers
         TestInteger[] randomRefArray = new TestInteger[10000];
 
-        for(int i = 0; i < 10000; i++) {
+        for(int j = 0; j < 10000; j++) {
             // Inserting a new TestInteger into each slot of the array with random values
-            randomRefArray[i] = new TestInteger((int) (Math.random() * 1000000));
+            randomRefArray[j] = new TestInteger((int) (Math.random() * 1000000));
         }
 
         // This block generates an array of already sorted elements
         TestInteger[] preSortedRefArray = new TestInteger[10000];
 
         // Fill the pre-sorted array with TestInteger's with sorted values
-        for(int i = 0; i < 10000; i++) {
-            preSortedRefArray[i] = new TestInteger(i);
+        for(int j = 0; j < 10000; j++) {
+            preSortedRefArray[j] = new TestInteger(i);
         }
 
         // This generates an array of ten presorted runs of 1000 elements each
@@ -61,7 +61,7 @@ public class Testing {
 
         int tenSequenceCounter = 0;
 
-        for(int i = 0; i < 10; i++) {
+        for(int j = 0; j < 10; j++) {
             int tenSequenceInitialValue = (int)(Math.random() * 1000000);
 
             for(int k = tenSequenceInitialValue; k < tenSequenceInitialValue + 1000; k++) {
@@ -75,7 +75,7 @@ public class Testing {
 
         int hundredSequenceCounter = 0;
 
-        for(int i = 0; i < 100; i++) {
+        for(int j = 0; j < 100; j++) {
             int hundredSequenceInitialValue = (int) (Math.random() * 1000000);
 
             for(int k = hundredSequenceInitialValue; k < hundredSequenceInitialValue + 100; k++) {
@@ -86,7 +86,6 @@ public class Testing {
 
         // Now we can start testing the sorting algorithms
         // First we'll start by getting measurements for Timsort
-        System.out.println("Starting with Timsort");
 
         // First we copy the reference arrays so that we can use Tim sort on each one
         TestInteger[] randomTimArray = randomRefArray.clone();
@@ -96,91 +95,95 @@ public class Testing {
 
         Arrays.sort(randomTimArray);
         timsortRandomArrayResults[i] = TestInteger.counter;
-        System.out.println("Did timsort sort the random array? " + Boolean.toString(Main.isSorted(randomTimArray)));
+        //System.out.println("Did timsort sort the random array? " + Boolean.toString(Main.isSorted(randomTimArray)));
         TestInteger.counter = 0;
 
         Arrays.sort(presortedTimArray);
         timsortPresortedArrayResults[i] = TestInteger.counter;
-        System.out.println("Did timsort sort the presorted array? " + Boolean.toString(Main.isSorted(presortedTimArray)));
+        //System.out.println("Did timsort sort the presorted array? " + Boolean.toString(Main.isSorted(presortedTimArray)));
         TestInteger.counter = 0;
 
         Arrays.sort(tenRunsTimArray);
-	timsortTenRunsArrayResults[i] = TestInteger.counter;
-        System.out.println("Is the array sorted? " + Boolean.toString(Main.isSorted(tenRunsTimArray)));
+        timsortTenRunsArrayResults[i] = TestInteger.counter;
+        //System.out.println("Is the array sorted? " + Boolean.toString(Main.isSorted(tenRunsTimArray)));
         TestInteger.counter = 0;
 
         Arrays.sort(hundredRunsTimeArray);
         timsortOneHundredRunsArrayResults[i] = TestInteger.counter;
-        System.out.println("Is the array sorted? " + Boolean.toString(Main.isSorted(hundredRunsTimeArray)));
+        //System.out.println("Is the array sorted? " + Boolean.toString(Main.isSorted(hundredRunsTimeArray)));
         TestInteger.counter = 0;
 
 	// Now we move onto quicksort
-	
-	TestInteger[] randomQuickArray = randomRefArray.clone();
-	TestInteger[] presortedQuickArray = preSortedRefArray.clone();
-	TestInteger[] tenRunsQuickArray = tenSequenceRefArray.clone();
-	TestInteger[] hundredRunsQuickArray = hundredSequenceRefArray.clone();
 
-	Main.quicksort(randomQuickArray, 0, randomQuickArray.length -1);
-	quicksortRandomArrayResults[i] = TestInteger.counter;
-	System.out.println("Did quicksort sort the random array? " + Boolean.toString(Main.isSorted(randomQuickArray)));
-	TestInteger.counter = 0;
+        TestInteger[] randomQuickArray = randomRefArray.clone();
+        TestInteger[] presortedQuickArray = preSortedRefArray.clone();
+        TestInteger[] tenRunsQuickArray = tenSequenceRefArray.clone();
+        TestInteger[] hundredRunsQuickArray = hundredSequenceRefArray.clone();
+
+        Main.quicksort(randomQuickArray, 0, randomQuickArray.length -1);
+        quicksortRandomArrayResults[i] = TestInteger.counter;
+        //System.out.println("Did quicksort sort the random array? " + Boolean.toString(Main.isSorted(randomQuickArray)));
+        TestInteger.counter = 0;
 
         Main.quicksort(presortedQuickArray, 0, presortedQuickArray.length -1);
         quicksortPresortedArrayResults[i] = TestInteger.counter;
-        System.out.println("Did quicksort sort the presorted array? " + Boolean.toString(Main.isSorted(presortedQuickArray)));
+        //System.out.println("Did quicksort sort the presorted array? " + Boolean.toString(Main.isSorted(presortedQuickArray)));
         TestInteger.counter = 0;
 
         Main.quicksort(tenRunsQuickArray, 0, tenRunsQuickArray.length -1);
         quicksortTenRunsArrayResults[i] = TestInteger.counter;
-        System.out.println("Did quicksort sort the array of ten runs? " + Boolean.toString(Main.isSorted(tenRunsQuickArray)));
+        //System.out.println("Did quicksort sort the array of ten runs? " + Boolean.toString(Main.isSorted(tenRunsQuickArray)));
         TestInteger.counter = 0;
 
         Main.quicksort(hundredRunsQuickArray, 0, hundredRunsQuickArray.length -1);
         quicksortOneHundredRunsArrayResults[i] = TestInteger.counter;
-        System.out.println("Is the array sorted? " + Boolean.toString(Main.isSorted(hundredRunsQuickArray)));
+        //System.out.println("Is the array sorted? " + Boolean.toString(Main.isSorted(hundredRunsQuickArray)));
         TestInteger.counter = 0;
 
 	// Moving on to randomized quicksort
-	
-	TestInteger[] randomRandomizedQuickArray = randomRefArray.clone();
+
+	    TestInteger[] randomRandomizedQuickArray = randomRefArray.clone();
         TestInteger[] presortedRandomizedQuickArray = preSortedRefArray.clone();
         TestInteger[] tenRunsRandomizedQuickArray = tenSequenceRefArray.clone();
         TestInteger[] hundredRunsRandomizedQuickArray = hundredSequenceRefArray.clone();
 
         Main.randQuicksort(randomRandomizedQuickArray, 0, randomRandomizedQuickArray.length -1);
         randomquicksortRandomArrayResults[i] = TestInteger.counter;
-        System.out.println("Did randomized quicksort sort the random array? " + Boolean.toString(Main.isSorted(randomRandomizedQuickArray)));
+        //System.out.println("Did randomized quicksort sort the random array? " + Boolean.toString(Main.isSorted(randomRandomizedQuickArray)));
         TestInteger.counter = 0;
 
         Main.randQuicksort(presortedRandomizedQuickArray, 0, presortedRandomizedQuickArray.length-1);
         randomquicksortPresortedArrayResults[i] = TestInteger.counter;
-        System.out.println("Did randomized quicksort sort the presorted array? " + Boolean.toString(Main.isSorted(presortedRandomizedQuickArray)));
+        //System.out.println("Did randomized quicksort sort the presorted array? " + Boolean.toString(Main.isSorted(presortedRandomizedQuickArray)));
         TestInteger.counter = 0;
 
         Main.randQuicksort(tenRunsRandomizedQuickArray, 0, tenRunsRandomizedQuickArray.length -1);
         randomquicksortTenRunsArrayResults[i] = TestInteger.counter;
-        System.out.println("Did randomized quicksort sort the array of ten runs? " + Boolean.toString(Main.isSorted(tenRunsRandomizedQuickArray)));
+        //System.out.println("Did randomized quicksort sort the array of ten runs? " + Boolean.toString(Main.isSorted(tenRunsRandomizedQuickArray)));
         TestInteger.counter = 0;
 
         Main.randQuicksort(hundredRunsRandomizedQuickArray, 0, hundredRunsRandomizedQuickArray.length -1);
         randomquicksortOneHundredRunsArrayResults[i] = TestInteger.counter;
-        System.out.println("Did randomized quicksort sort the array of one hundred runs? " + Boolean.toString(Main.isSorted(hundredRunsRandomizedQuickArray)));
+        //System.out.println("Did randomized quicksort sort the array of one hundred runs? " + Boolean.toString(Main.isSorted(hundredRunsRandomizedQuickArray)));
         TestInteger.counter = 0;
 	}
 
 	// Now we print out all the results
-	
+
 	System.out.println("The results of the five runs on each sorting algorithm with the different data sets:");
 	System.out.println("Timsort random array results: " + java.util.Arrays.toString(timsortRandomArrayResults));
 	System.out.println("Timsort presorted array results: " + java.util.Arrays.toString(timsortPresortedArrayResults));
 	System.out.println("Timsort array of ten runs results: " + java.util.Arrays.toString(timsortTenRunsArrayResults));
 	System.out.println("Timsort array of one hundred runs results: " + java.util.Arrays.toString(timsortOneHundredRunsArrayResults));
-	
+
+	System.out.println();
+
 	System.out.println("Quicksort random array results: " + java.util.Arrays.toString(quicksortRandomArrayResults));
 	System.out.println("Quicksort presorted array results: " + java.util.Arrays.toString(quicksortPresortedArrayResults));
 	System.out.println("Quicksort array of ten runs results: " + java.util.Arrays.toString(quicksortTenRunsArrayResults));
 	System.out.println("Quicksort array of one hundred runs results: " + java.util.Arrays.toString(quicksortOneHundredRunsArrayResults));
+
+	System.out.println();
 
 	System.out.println("Randomized quicksort random array results: " + java.util.Arrays.toString(randomquicksortRandomArrayResults));
 	System.out.println("Randomized quicksort presorted array results: " + java.util.Arrays.toString(randomquicksortPresortedArrayResults));
