@@ -171,6 +171,33 @@ public class Testing {
         randomquicksortOneHundredRunsArrayResults[i] = TestInteger.counter;
         //System.out.println("Did randomized quicksort sort the array of one hundred runs? " + Boolean.toString(Main.isSorted(hundredRunsRandomizedQuickArray)));
         TestInteger.counter = 0;
+
+    // Moving on to median-of-three pivot selection
+
+        TestInteger[] randomMedian3Array = randomRefArray.clone();
+        TestInteger[] presortedMedian3Array = preSortedRefArray.clone();
+        TestInteger[] tenRunsMedian3Array = tenSequenceRefArray.clone();
+        TestInteger[] hundredRunsMedian3Array = hundredSequenceRefArray.clone();
+
+        Main.medianOf3sort(randomMedian3Array, 0, randomMedian3Array.length -1);
+        medianof3quicksortRandomArrayResults[i] = TestInteger.counter;
+        System.out.println("Did Median3 sort the random array? " + Boolean.toString(Main.isSorted(randomMedian3Array)));
+        TestInteger.counter = 0;
+
+        Main.medianOf3sort(presortedMedian3Array, 0, presortedMedian3Array.length-1);
+        medianof3quicksortPresortedArrayResults[i] = TestInteger.counter;
+        System.out.println("Did Median3 sort the presorted array? " + Boolean.toString(Main.isSorted(presortedMedian3Array)));
+        TestInteger.counter = 0;
+
+        Main.medianOf3sort(tenRunsMedian3Array, 0, tenRunsMedian3Array.length -1);
+        medianof3quicksortTenRunsArrayResults[i] = TestInteger.counter;
+        System.out.println("Did Median3 sort the array of ten runs? " + Boolean.toString(Main.isSorted(tenRunsMedian3Array)));
+        TestInteger.counter = 0;
+
+        Main.randQuicksort(hundredRunsMedian3Array, 0, hundredRunsMedian3Array.length -1);
+        medianof3quicksortOneHundredRunsResults[i] = TestInteger.counter;
+        System.out.println("Did Median3 sort the array of one hundred runs? " + Boolean.toString(Main.isSorted(hundredRunsMedian3Array)));
+        TestInteger.counter = 0;
 	}
 
 	// Now we print out all the results
@@ -196,5 +223,10 @@ public class Testing {
 	System.out.println("Randomized quicksort presorted array results: " + java.util.Arrays.toString(randomquicksortPresortedArrayResults));
 	System.out.println("Randomized quicksort array of ten runs results: " + java.util.Arrays.toString(randomquicksortTenRunsArrayResults));
 	System.out.println("Randomized quicksort array of one hundred runs results: " + java.util.Arrays.toString(randomquicksortOneHundredRunsArrayResults));
+
+    System.out.println("Median3 random array results: " + java.util.Arrays.toString(medianof3quicksortRandomArrayResults));
+    System.out.println("Median3 presorted array results: " + java.util.Arrays.toString(medianof3quicksortPresortedArrayResults));
+    System.out.println("Median3 array of ten runs results: " + java.util.Arrays.toString(medianof3quicksortTenRunsArrayResults));
+    System.out.println("Median3 array of one hundred runs results: " + java.util.Arrays.toString(medianof3quicksortOneHundredRunsResults));
     }
 }
