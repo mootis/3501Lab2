@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.Random;
 
 public class Main {
@@ -64,64 +63,7 @@ public class Main {
         Array[arrayPositionTwo] = temp;
     }
 
-    // Array generation and info output
+    // Array generation and info output - This functionality has been moved to testing
     public static void main(String[] args) {
-        // Create array - Generate 10,000 random TestIntegers in range 1-1,000,000 using Math.random
-        TestInteger[] timArray = new TestInteger[10000];
-
-        // Used in last two array generators
-        int counter = 0;
-
-        // Populate array - Change i to modify number of sorted sequences
-        // Make sure only one section is active at a time!
-
-        for (int i = 0; i < 10000; i++){
-            // Random sequence - default
-            timArray[i] = new TestInteger((int)(Math.random()*100000));
-
-            // Increasing order
-            // timArray[i] = new TestInteger((i));
-
-            // Initial value used for starting sequence - only used for following two array generators
-            int initialValue = (int) (Math.random() * 1000000);
-
-            // 10 sorted sequences of 1,000 elements - change c to modify number of elements
-            /*
-            for(int k = initialValue; k < initialValue + 1000; k++){
-                timArray[counter] = new TestInteger(k);
-                counter++;
-            }
-            */
-
-            // 100 sorted sequences of 100 elements - change c to modify number of elements
-            /*
-            for(int k = initialValue; k < initialValue + 100; k++){
-                timArray[counter] = new TestInteger(k);
-                counter++;
-            }
-            */
-        }
-
-        // Clone array using .clone
-        TestInteger[] quickArray = timArray.clone();
-
-        // Sort the array using Random-Quicksort
-        randQuicksort(quickArray, 0, quickArray.length-1);
-        System.out.println("Random-Quicksort counter output: " + TestInteger.counter);
-        System.out.println("Is the array sorted? " + Boolean.toString(isSorted(quickArray)));
-        TestInteger.counter = 0;
-
-        /*
-        // Sort the array using Tim Sort
-        Arrays.sort(timArray);
-        System.out.println("TimSort counter output: " + TestInteger.counter);
-        System.out.println("Is the array sorted? " + Boolean.toString(isSorted(timArray)));
-        TestInteger.counter = 0;
-
-        // Sort the array using Quicksort
-        quicksort(quickArray, 0, quickArray.length - 1);
-        System.out.println("QuickSort counter output: " + TestInteger.counter);
-        System.out.println("Is the array sorted? " + Boolean.toString(isSorted(quickArray)));
-        */
     }
 }

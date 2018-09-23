@@ -7,6 +7,7 @@ public class Testing {
 
 	// First we'll set up some results arrays just to make them easier to read at the end
 
+    /*
 	long[] timsortRandomArrayResults = new long[5];
 	long[] timsortPresortedArrayResults = new long[5];
 	long[] timsortTenRunsArrayResults = new long[5];
@@ -16,6 +17,7 @@ public class Testing {
 	long[] quicksortPresortedArrayResults = new long[5];
 	long[] quicksortTenRunsArrayResults = new long[5];
 	long[] quicksortOneHundredRunsArrayResults = new long[5];
+    */
 
 	long[] randomquicksortRandomArrayResults = new long[5];
 	long[] randomquicksortPresortedArrayResults = new long[5];
@@ -87,6 +89,7 @@ public class Testing {
         // Now we can start testing the sorting algorithms
         // First we'll start by getting measurements for Timsort
 
+        /*
         // First we copy the reference arrays so that we can use Tim sort on each one
         TestInteger[] randomTimArray = randomRefArray.clone();
         TestInteger[] presortedTimArray = preSortedRefArray.clone();
@@ -112,9 +115,10 @@ public class Testing {
         timsortOneHundredRunsArrayResults[i] = TestInteger.counter;
         //System.out.println("Is the array sorted? " + Boolean.toString(Main.isSorted(hundredRunsTimeArray)));
         TestInteger.counter = 0;
+        */
 
 	// Now we move onto quicksort
-
+        /*
         TestInteger[] randomQuickArray = randomRefArray.clone();
         TestInteger[] presortedQuickArray = preSortedRefArray.clone();
         TestInteger[] tenRunsQuickArray = tenSequenceRefArray.clone();
@@ -139,6 +143,7 @@ public class Testing {
         quicksortOneHundredRunsArrayResults[i] = TestInteger.counter;
         //System.out.println("Is the array sorted? " + Boolean.toString(Main.isSorted(hundredRunsQuickArray)));
         TestInteger.counter = 0;
+        */
 
 	// Moving on to randomized quicksort
 
@@ -170,6 +175,7 @@ public class Testing {
 
 	// Now we print out all the results
 
+    /*
 	System.out.println("The results of the five runs on each sorting algorithm with the different data sets:");
 	System.out.println("Timsort random array results: " + java.util.Arrays.toString(timsortRandomArrayResults));
 	System.out.println("Timsort presorted array results: " + java.util.Arrays.toString(timsortPresortedArrayResults));
@@ -184,6 +190,7 @@ public class Testing {
 	System.out.println("Quicksort array of one hundred runs results: " + java.util.Arrays.toString(quicksortOneHundredRunsArrayResults));
 
 	System.out.println();
+    */
 
 	System.out.println("Randomized quicksort random array results: " + java.util.Arrays.toString(randomquicksortRandomArrayResults));
 	System.out.println("Randomized quicksort presorted array results: " + java.util.Arrays.toString(randomquicksortPresortedArrayResults));
