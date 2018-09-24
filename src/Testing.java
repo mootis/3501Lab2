@@ -181,22 +181,22 @@ public class Testing {
 
         Main.medianOf3sort(randomMedian3Array, 0, randomMedian3Array.length -1);
         medianof3quicksortRandomArrayResults[i] = TestInteger.counter;
-        System.out.println("Did Median3 sort the random array? " + Boolean.toString(Main.isSorted(randomMedian3Array)));
+        //System.out.println("Did Median3 sort the random array? " + Boolean.toString(Main.isSorted(randomMedian3Array)));
         TestInteger.counter = 0;
 
         Main.medianOf3sort(presortedMedian3Array, 0, presortedMedian3Array.length-1);
         medianof3quicksortPresortedArrayResults[i] = TestInteger.counter;
-        System.out.println("Did Median3 sort the presorted array? " + Boolean.toString(Main.isSorted(presortedMedian3Array)));
+        //System.out.println("Did Median3 sort the presorted array? " + Boolean.toString(Main.isSorted(presortedMedian3Array)));
         TestInteger.counter = 0;
 
         Main.medianOf3sort(tenRunsMedian3Array, 0, tenRunsMedian3Array.length -1);
         medianof3quicksortTenRunsArrayResults[i] = TestInteger.counter;
-        System.out.println("Did Median3 sort the array of ten runs? " + Boolean.toString(Main.isSorted(tenRunsMedian3Array)));
+        //System.out.println("Did Median3 sort the array of ten runs? " + Boolean.toString(Main.isSorted(tenRunsMedian3Array)));
         TestInteger.counter = 0;
 
         Main.randQuicksort(hundredRunsMedian3Array, 0, hundredRunsMedian3Array.length -1);
         medianof3quicksortOneHundredRunsResults[i] = TestInteger.counter;
-        System.out.println("Did Median3 sort the array of one hundred runs? " + Boolean.toString(Main.isSorted(hundredRunsMedian3Array)));
+        //System.out.println("Did Median3 sort the array of one hundred runs? " + Boolean.toString(Main.isSorted(hundredRunsMedian3Array)));
         TestInteger.counter = 0;
 	}
 

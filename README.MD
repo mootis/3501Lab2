@@ -7,22 +7,22 @@ Work in pairs<br/>
 Results of sorting - five trials
 -
 Randomized-Quicksort {166369, 157144, 155266, 156436, 159848}<br/>
-Median-of-three {, , , , }
+Median-of-three {157868, 150130, 157186, 153544, 157632}
 
 Results of sorting - increasing order
 -
-Randomized-Quicksort {}<br/>
-Median-of-three {}
+Randomized-Quicksort {49995000, 49995000, 49995000, 49995000, 49995000}<br/>
+Median-of-three {50024997, 50024997, 50024997, 50024997, 50024997}
 
 Results of sorting - five trials with 10 sorted sequences of 1,000 elements each
 -
-Randomized-Quicksort {, , , , }<br/>
-Median-of-three {, , , , }
+Randomized-Quicksort {154762, 151953, 168339, 154328, 154222}<br/>
+Median-of-three {148066, 152090, 150818, 155588, 154438}
 
 Results of sorting - five trials with 100 sorted sequences of 100 elements each
 -
-Randomized-Quicksort {, , , , }<br/>
-Median-of-three {, , , , }
+Randomized-Quicksort {150827, 157599, 146475, 163118, 154969}<br/>
+Median-of-three {149470, 186183, 157663, 163195, 145861}
 
 • All lab submissions should be done by canvas. Please be sure to include
 your group members.<br/>
