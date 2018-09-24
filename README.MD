@@ -1,28 +1,46 @@
+Lab 3
+-
 Authors: David Chong, Ethan Hamer, Abe Monjor<br/>
 CSci 3501 Lab 3<br/>
 Due Monday, September 24th by midnight<br/>
 60 points between Lab 2 and Lab 3<br/>
 Work in pairs<br/>
 
+How to run
+-
+Please run the Testing.java file. This will return results of five trials for each task with the three sorting methods.<br/>
+Main.java includes all the functionality.<br/>
+TestInteger.java exists to show how many comparisons happen.
+
+Conclusion
+-
+Median of three is better than randomized-quicksort typically but they are close.<br/>
+Quick-Insertion is best for a increasing order/presorted array.<br/>
+See below for our trials.
+
 Results of sorting - five trials
 -
 Randomized-Quicksort {166369, 157144, 155266, 156436, 159848}<br/>
-Median-of-three {157868, 150130, 157186, 153544, 157632}
+Median-of-three {157868, 150130, 157186, 153544, 157632}<br/>
+Quick-Insertion {24819022, 24998703, 25073773, 25004893, 25348513}
 
-Results of sorting - increasing order
+Results of sorting - increasing order/presorted array
 -
 Randomized-Quicksort {49995000, 49995000, 49995000, 49995000, 49995000}<br/>
 Median-of-three {50024997, 50024997, 50024997, 50024997, 50024997}
+Quick-Insertion {9999, 9999, 9999, 9999, 9999}
 
 Results of sorting - five trials with 10 sorted sequences of 1,000 elements each
 -
 Randomized-Quicksort {154762, 151953, 168339, 154328, 154222}<br/>
 Median-of-three {148066, 152090, 150818, 155588, 154438}
+Quick-Insertion {10009997, 23009998, 18009998, 19009999, 28009995}
 
 Results of sorting - five trials with 100 sorted sequences of 100 elements each
 -
 Randomized-Quicksort {150827, 157599, 146475, 163118, 154969}<br/>
-Median-of-three {149470, 186183, 157663, 163195, 145861}
+Median-of-three {152149, 153194, 152355, 152945, 151784}
+Quick-Insertion {23793567, 23477512, 24166351, 24439993, 23209959}
 
 • All lab submissions should be done by canvas. Please be sure to include
 your group members.<br/>
@@ -105,6 +123,7 @@ http://stackoverflow.com/questions/2127217/java-stack-overflow-error-how-toincre
 
 
 Last lab info<br/>
+-
 CSci 3501 Lab 2<br/>
 Due Friday, September 14th by midnight<br/>
 30 points
@@ -116,7 +135,7 @@ Tim sort {120401, 120436, 120345, 120393, 120467}
 
 Quicksort {162620, 161465, 159754, 155558, 151760}
 
-Results of sorting - increasing order
+Results of sorting - increasing order/presorted array
 -
 Tim sort {9999}
 

@@ -194,9 +194,35 @@ public class Testing {
         //System.out.println("Did Median3 sort the array of ten runs? " + Boolean.toString(Main.isSorted(tenRunsMedian3Array)));
         TestInteger.counter = 0;
 
-        Main.randQuicksort(hundredRunsMedian3Array, 0, hundredRunsMedian3Array.length -1);
+        Main.medianOf3sort(hundredRunsMedian3Array, 0, hundredRunsMedian3Array.length -1);
         medianof3quicksortOneHundredRunsResults[i] = TestInteger.counter;
         //System.out.println("Did Median3 sort the array of one hundred runs? " + Boolean.toString(Main.isSorted(hundredRunsMedian3Array)));
+        TestInteger.counter = 0;
+
+    // Moving on to quickInsertion
+        TestInteger[] randomquickInsertion = randomRefArray.clone();
+        TestInteger[] presortedquickInsertion = preSortedRefArray.clone();
+        TestInteger[] tenRunsquickInsertion = tenSequenceRefArray.clone();
+        TestInteger[] hundredRunsquickInsertion = hundredSequenceRefArray.clone();
+
+        Main.quickInsertionSort(randomquickInsertion);
+        quicksortinsertionsortRandomArrayResults[i] = TestInteger.counter;
+        // System.out.println("Did quickInsertion sort the random array? " + Boolean.toString(Main.isSorted(randomquickInsertion)));
+        TestInteger.counter = 0;
+
+        Main.quickInsertionSort(presortedquickInsertion);
+        quicksortinsertionsortPresortedArrayResults[i] = TestInteger.counter;
+        // System.out.println("Did quickInsertion sort the presorted array? " + Boolean.toString(Main.isSorted(presortedquickInsertion)));
+        TestInteger.counter = 0;
+
+        Main.quickInsertionSort(tenRunsquickInsertion);
+        quicksortinsertionsortTenRunsArrayResults[i] = TestInteger.counter;
+        // System.out.println("Did quickInsertion sort the array of ten runs? " + Boolean.toString(Main.isSorted(tenRunsquickInsertion)));
+        TestInteger.counter = 0;
+
+        Main.quickInsertionSort(hundredRunsquickInsertion);
+        quicksortinsertionsortOneHundredRunsResults[i] = TestInteger.counter;
+        // System.out.println("Did quickInsertion sort the array of one hundred runs? " + Boolean.toString(Main.isSorted(hundredRunsquickInsertion)));
         TestInteger.counter = 0;
 	}
 
@@ -228,5 +254,10 @@ public class Testing {
     System.out.println("Median3 presorted array results: " + java.util.Arrays.toString(medianof3quicksortPresortedArrayResults));
     System.out.println("Median3 array of ten runs results: " + java.util.Arrays.toString(medianof3quicksortTenRunsArrayResults));
     System.out.println("Median3 array of one hundred runs results: " + java.util.Arrays.toString(medianof3quicksortOneHundredRunsResults));
+
+    System.out.println("quickInsertion random array results: " + java.util.Arrays.toString(quicksortinsertionsortRandomArrayResults));
+    System.out.println("quickInsertion presorted array results: " + java.util.Arrays.toString(quicksortinsertionsortPresortedArrayResults));
+    System.out.println("quickInsertion array of ten runs results: " + java.util.Arrays.toString(quicksortinsertionsortTenRunsArrayResults));
+    System.out.println("quickInsertion array of one hundred runs results: " + java.util.Arrays.toString(quicksortinsertionsortOneHundredRunsResults));
     }
 }

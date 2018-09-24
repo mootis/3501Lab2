@@ -80,6 +80,32 @@ public class Main {
         return indexArray[1];
     }
 
+    public static void quickInsertionSort(TestInteger[] array){
+        partialQuicksort(array, 0, array.length);
+        insertionSort(array);
+    }
+
+    public static void insertionSort(TestInteger[] partial){
+        for (int j = 1; j < partial.length; j++){
+            TestInteger key = partial[j];
+            // Insert partial[j] into the sorted sequence A[1..j-1].
+            int i = j-1;
+            while (i >= 0 && partial[i].compareTo(key) == 1){
+                partial[i+1] = partial[i];
+                i = i-1;
+            }
+            partial[i+1] = key;
+        }
+    }
+
+    public static void partialQuicksort(TestInteger[] quickArray, int start, int end){
+        if (end - start < 3){
+            int q = partition(quickArray, start, end);
+            quicksort(quickArray, start, q-1);
+            quicksort(quickArray, q+1, end);
+        }
+    }
+
     // Quicksort method based on psudocode from book
     public static void quicksort(TestInteger[] quickArray, int start, int end){
         if (start < end){
@@ -138,7 +164,7 @@ public class Main {
         testingArray[3] = new TestInteger(10);
         testingArray[4] = new TestInteger(3);
 
-        medianOf3sort(testingArray, 0 , 4);
+        insertionSort(testingArray);
         for (TestInteger temp : testingArray) {
             System.out.println(temp.value);
         }
