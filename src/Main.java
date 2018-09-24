@@ -32,8 +32,8 @@ public class Main {
     // Median-of-three pivot selection sort partition method
     public static int partitionMedian(TestInteger[] mPartArray, int subStart, int subEnd) {
         int result =  findMedianIndex(mPartArray, subStart, subEnd);
-        exchange(0, result, mPartArray);
-        TestInteger x = mPartArray[0];
+        exchange(subEnd, result, mPartArray);
+        TestInteger x = mPartArray[subEnd];
         int i = subStart - 1;
 
         for (int count = subStart; count <= subEnd - 1; count++) {
@@ -42,6 +42,9 @@ public class Main {
                 exchange(i, count, mPartArray);
             }
         }
+
+        exchange(i+1, subEnd, mPartArray);
+
         return i+1;
     }
 
@@ -136,5 +139,9 @@ public class Main {
         testingArray[4] = new TestInteger(3);
 
         medianOf3sort(testingArray, 0 , 4);
+        for (TestInteger temp : testingArray) {
+            System.out.println(temp.value);
+        }
+        System.out.println(isSorted(testingArray));
     }
 }
